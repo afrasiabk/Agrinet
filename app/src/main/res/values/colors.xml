@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#7ac144</color><!--C51162-388E3C-->
+    <color name="colorPrimaryText">#000000</color><!--ffffff-->
+    <color name= "colorTextOffBlack">#353839</color>
+    <color name= "colorComplimentary">#8B44C1</color>
+    <color name= "colorTextPrimaryVariant">#388E3C</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color><!--AD1457-->
+    <color name="colorPrimaryDarkk">#388E3C</color><!--ffffff-->
+    <color name="colorAccent">@color/colorPrimary</color><!--C51162-->
+    <color name="colorAccentText">#ffffff</color><!--ffffff-->
+    <color name="colorBackground">#ffffff</color><!--ffffff-->
+    <color name="colorPink">#f6f1e2</color><!--ffffff-->
+    <color name="colorBackgroundSec">#fbfbf7</color>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#1e747c</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#702050</color>
+    <color name="dot_dark_screen5">#2278d4</color>
+    <color name="dot_dark_screen6">#388E3C</color>
+    <color name="dot_dark_screen7">#388E3C</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#4a8f96</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#8c4c72</color>
+    <color name="dot_light_screen5">#64a0e0</color>
+    <color name="dot_light_screen6">#7ac144</color>
+    <color name="dot_light_screen7">#7ac144</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen5</item>
+        <item>@color/dot_light_screen6</item>
+        <item>@color/dot_light_screen7</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen5</item>
+        <item>@color/dot_dark_screen6</item>
+        <item>@color/dot_dark_screen7</item>
+    </array>
+</resources>

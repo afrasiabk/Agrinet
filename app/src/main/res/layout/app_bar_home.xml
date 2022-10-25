@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_layout_home"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/user_home_toolbar"
+        android:layout_width="0dp"
+        android:theme="@style/search"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStartWithNavigation="0dp"
+        >
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/user_home_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultQueryHint="Search Products"
+            app:iconifiedByDefault="false"
+            android:focusable="false"
+            android:theme="@style/search"
+            android:paddingLeft="-16dp"
+            android:paddingStart="-16dp"
+            >
+        </androidx.appcompat.widget.SearchView>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_home_toolbar" />
+
+    <com.daasuu.bl.BubbleLayout
+        android:id="@+id/home_cart_pop"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        app:bl_arrowDirection="bottom"
+        app:bl_arrowHeight="8dp"
+        app:bl_arrowPosition="90dp"
+        app:bl_arrowWidth="12dp"
+        app:bl_bubbleColor="#f5f5f5"
+        app:bl_cornersRadius="10dp"
+        app:bl_strokeColor="@color/colorPrimaryDark"
+        app:bl_strokeWidth="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_cart_frame"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:padding="3dp"
+            android:text="Added to cart\nClick here to Checkout"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDarkk"
+            android:textSize="11sp" />
+    </com.daasuu.bl.BubbleLayout>
+
+    <FrameLayout
+        android:id="@+id/home_cart_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/home_float_cart"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/cart_bg"
+            android:tint="@android:color/white"
+            android:paddingLeft="16dp"
+            android:paddingRight="17dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/home_cart_txt"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/cart_bg"
+            android:padding="2dp"
+            android:gravity="center"
+            android:scaleType="centerCrop"
+            android:text="0"
+            android:textColor="@android:color/white" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
