@@ -16,7 +16,7 @@ import alast.hm.Model.LatiLongi;
 
 public class PolygonSingleton {
 
-    private static DatabaseReference locsRef = FirebaseDatabase.getInstance().getReference("Polygon");
+    private static DatabaseReference locsRef = FirebaseDatabase.getInstance().getReference("Agrinet/Polygon");
     public static List<LatLng> polygonArray = new ArrayList<>();;
     private static PolygonSingleton polygonSingleton;
 

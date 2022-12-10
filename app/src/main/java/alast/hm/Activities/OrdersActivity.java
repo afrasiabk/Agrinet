@@ -66,7 +66,7 @@ public class OrdersActivity extends AppCompatActivity {
         adapter = new OrdersAdapter(orders, type);
         recyclerView.setAdapter(adapter);
 
-        ordersRef = FirebaseDatabase.getInstance().getReference("Orders").child(type);
+        ordersRef = FirebaseDatabase.getInstance().getReference("Agrinet/Orders").child(type);
         Query q = ordersRef.orderByChild("user_phone").equalTo(user_phone);
 
         q.addListenerForSingleValueEvent(new ValueEventListener() {

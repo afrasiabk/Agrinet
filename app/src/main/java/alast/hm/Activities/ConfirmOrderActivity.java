@@ -99,7 +99,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
     private void fetchDeliveryTime() {
-        FirebaseDatabase.getInstance().getReference("Texts").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Agrinet/Texts").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child("delivery_time").exists()){
@@ -213,7 +213,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         loadingBar.setMessage("processing");
         loadingBar.show();
 
-        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Ids").child("Orders");
+        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Ids").child("Orders");
         idRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -252,7 +252,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         ordermap.put("address", address);
         ordermap.put("status", "Pending");
 
-        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child("Pending");
+        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Orders").child("Pending");
         orderRef.child(id_str).setValue(ordermap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -284,7 +284,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
     private void updateIds() {
-        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Ids").child("Orders");
+        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Ids").child("Orders");
         idRef.setValue(id_str);
     }
 

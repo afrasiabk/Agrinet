@@ -75,7 +75,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        orderRef = FirebaseDatabase.getInstance().getReference("Orders").child(type).child(order_id);
+        orderRef = FirebaseDatabase.getInstance().getReference("Agrinet/Orders").child(type).child(order_id);
         orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -118,7 +118,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         adapter = new OrderedProductsAdapter(products);
         recyclerView.setAdapter(adapter);
 
-        cartRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(type).child(order_id).child("cart");
+        cartRef = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Orders").child(type).child(order_id).child("cart");
         cartRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

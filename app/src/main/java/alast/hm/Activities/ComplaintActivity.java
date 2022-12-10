@@ -77,7 +77,7 @@ public class ComplaintActivity extends AppCompatActivity {
         complain_edit.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.VISIBLE);
 
-        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Ids").child("Complaints");
+        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Ids").child("Complaints");
         idRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -102,7 +102,7 @@ public class ComplaintActivity extends AppCompatActivity {
         map.put("name",Prevalent.getCurrentOnlineUser().getName());
         map.put("complaint",text);
 
-        DatabaseReference suggest = FirebaseDatabase.getInstance().getReference("Complaints");
+        DatabaseReference suggest = FirebaseDatabase.getInstance().getReference("Agrinet/Complaints");
         suggest.child(id+"").updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -118,7 +118,7 @@ public class ComplaintActivity extends AppCompatActivity {
     }
 
     private void updateIds(int id_str) {
-        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference("Ids").child("Complaints");
+        DatabaseReference idRef = FirebaseDatabase.getInstance().getReference("Agrinet/Ids").child("Complaints");
         idRef.setValue(id_str);
         close_btn.setVisibility(View.VISIBLE);
         response_txt.setVisibility(View.VISIBLE);

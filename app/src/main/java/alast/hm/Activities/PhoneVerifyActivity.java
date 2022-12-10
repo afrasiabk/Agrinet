@@ -253,7 +253,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
 
     //calls register() or login()
     private void check_register() {
-        final DatabaseReference RootRef = FirebaseDatabase.getInstance().getReference("Users");
+        final DatabaseReference RootRef = FirebaseDatabase.getInstance().getReference("Agrinet/Users");
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -289,7 +289,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
         userdataMap.put("name",name);
         userdataMap.put("phone",authPhoneNumber);
         userdataMap.put("token", FirebaseInstanceId.getInstance().getToken());
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Agrinet/Users");
 
         reference.child(authPhoneNumber).updateChildren(userdataMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

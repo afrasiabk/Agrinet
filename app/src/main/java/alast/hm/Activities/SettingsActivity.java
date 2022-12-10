@@ -73,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
         loadingBar.setMessage("Please wait..");
         loadingBar.show();
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Users");
         HashMap<String, Object> userMap = new HashMap<>();
         userMap. put("name", name_edit.getText().toString());
         ref.child(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber()).updateChildren(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {

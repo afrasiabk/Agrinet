@@ -54,7 +54,7 @@ public class  SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         fromIntent();
         imageView = (ImageView) findViewById(R.id.user_splash);
-        Picasso.get().load(R.drawable.splash).fit().into(imageView);
+        Picasso.get().load(R.drawable.agrinet2).fit().into(imageView);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class  SplashActivity extends AppCompatActivity {
 
     private void data() {
         dest();
-        FirebaseDatabase.getInstance().getReference("Products").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Agrinet/Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 DataSingleton.getDataObject();
@@ -303,7 +303,7 @@ public class  SplashActivity extends AppCompatActivity {
 
         final String phone = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Agrinet");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

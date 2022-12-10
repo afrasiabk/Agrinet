@@ -126,12 +126,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         search_adapter = new SearchAdapter(search_products);
         search_rv.setAdapter(search_adapter);
 
-        home_text();
+        //home_text();
 
     }
 
     private void home_text() {
-        FirebaseDatabase.getInstance().getReference("Texts").child("home_text").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Agrinet/Texts").child("home_text").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child("visibility").getValue().equals("1")){
@@ -281,7 +281,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
 
             final String phone = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(phone);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Agrinet").child("Users").child(phone);
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -310,7 +310,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static void updateToken(){
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             String phone = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users").child(phone);
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Agrinet/Users").child(phone);
             String token = FirebaseInstanceId.getInstance().getToken();
             ref.child("token").setValue(token);
         }
